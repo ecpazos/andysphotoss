@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andy's Photos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: #666;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect width="1200" height="800" fill="%23334155"/><rect x="200" y="150" width="800" height="500" fill="%23475569" opacity="0.5"/><circle cx="600" cy="400" r="150" fill="%2364748b" opacity="0.3"/><text x="600" y="420" font-family="Arial" font-size="48" fill="white" text-anchor="middle">Sports Action Shot</text><text x="600" y="460" font-family="Arial" font-size="24" fill="rgba(255,255,255,0.8)" text-anchor="middle">Andy\'s Best Photo Goes Here</text></svg>');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        /* Sections */
+        .section {
+            padding: 4rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #333;
+        }
+
+        /* About Section */
+        .about {
+            background: #f8f9fa;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .about-image {
+            text-align: center;
+        }
+
+        .profile-placeholder {
+            width: 250px;
+            height: 250px;
+            background: #e9ecef;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 1rem;
+            margin: 0 auto;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        /* Gallery Section */
+        .gallery-category {
+            margin-bottom: 3rem;
+        }
+
+        .gallery-category h3 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            color: #333;
+            text-align: center;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .photo-item {
+            background: #f8f9fa;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .photo-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .photo-placeholder {
+            height: 200px;
+            background: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 0.9rem;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: #f8f9fa;
+            text-align: center;
+        }
+
+        .contact p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        .contact-email {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #333;
+        }
+
+        /* Footer */
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .profile-placeholder {
+                width: 200px;
+                height: 200px;
+            }
+
+            .photo-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-menu {
+                gap: 1.5rem;
+            }
+
+            .hero {
+                height: 80vh;
+            }
+
+            .section {
+                padding: 2rem 0;
+            }
+        }
+
+        /* Modal for expanded photos */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+        }
+
+        .modal-content {
+            margin: 5% auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            animation: zoom 0.3s;
+        }
+
+        @keyframes zoom {
+            from {transform: scale(0.1)}
+            to {transform: scale(1)}
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: #bbb;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">Andy's Photos</div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Hi, I'm Andy Pazos</h1>
+            <p>I'm a high school senior and photographer. I love capturing the energy of sports, the details of everyday life, and moments that tell a story.</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="profile-placeholder">
+                        Headshot of Andy with camera or behind-the-scenes photo goes here
+                    </div>
+                </div>
+                <div class="about-text">
+                    <p>I started photography by taking pictures for my friends' lacrosse games, and it grew into something I really enjoy. Through my camera, I've learned how to focus, stay patient, and look at things from different perspectives. I plan to study neuroscience in college, but photography is one of the ways I express myself.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section">
+        <div class="container">
+            <h2>Gallery</h2>
+            
+            <!-- Sports Category -->
+            <div class="gallery-category">
+                <h3>Sports</h3>
+                <div class="photo-grid">
+                    <div class="photo-item" onclick="openModal('sports1')">
+                        <div class="photo-placeholder">
+                            Football action shot - quarterback throwing
+                        </div>
+                    </div>
+                    <div class="photo-item" onclick="openModal('sports2')">
+                        <div class="photo-placeholder">
+                            Basketball game - player shooting
+                        </div>
+                    </div>
+                    <div class="photo-item" onclick="openModal('sports3')">
+                        <div class="photo-placeholder">
+                            Soccer match - goal celebration
+                        </div>
+                    </div>
+                    <div class="photo-item" onclick="openModal('sports4')">
+                        <div class="photo-placeholder">
+                            Track and field - runner crossing finish
+                        </div>
+                    </div>
+                    <div class="photo-item" onclick="openModal('sports5')">
+                        <div class="photo-placeholder">
+                            Baseball - batter swinging
+                        </div>
+                    </div>
+                    <div class="photo-item" onclick="openModal('sports6')">
+                        <div class="photo-placeholder">
+                            Lacrosse action - player with stick
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nature/Outdoors Category -->
+            <div class="gallery-category">
+                <h3>Nature/Outdoors</h3>
+                <div class="photo-grid">
+                    <div class="photo-item" onclick="openModal('nature1')">
+                        <div class="photo-placeholder">
+                            Georgia sunset landscape
+                        </div>
+                    </div>
+                    <div class="photo-item" onclick="openModal('nature2')">
+                        <div class="photo-placeholder">
+                            Morning light through trees
+                        </div>
+                    </div>
+                    <div class="photo-item" onclick="openModal('nature3')">
+                        <div class="photo-placeholder">
+                            River reflection shot
+                        </div>
+                    </div>
+                    <div class="photo-item" onclick="openModal('nature4')">
+                        <div class="photo-placeholder">
+                            Mountain trail vista
+                        </div>
+                    </div>
+                    <div class="photo-item" onclick="openModal('nature5')">
+                        <div class="photo-placeholder">
+                            Autumn leaves close-up
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- People/Moments Category -->
+            <div class="gallery-category">
+                <h3>People/Moments</h3>
+                <div class="photo-grid">
+                    <div class="photo-item" onclick="openModal('people1')">
+                        <div class="photo-placeholder">
+                            Senior portrait - classmate
+                        </div>
+                    </div>
+                    <div class="photo-item" onclick="openModal('people2')">
+                        <div class="photo-placeholder">
+                            Candid moment - friends laughing
+                        </div>
+                    </div>
+                    <div class="photo-item" onclick="openModal('people3')">
+                        <div class="photo-placeholder">
+                            School event - graduation ceremony
+                        </div>
+                    </div>
+                    <div class="photo-item" onclick="openModal('people4')">
+                        <div class="photo-placeholder">
+                            Family gathering moment
+                        </div>
+                    </div>
+                    <div class="photo-item" onclick="openModal('people5')">
+                        <div class="photo-placeholder">
+                            Street photography - interesting character
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h2>Contact</h2>
+            <p>Thanks for visiting my site. You can reach me at</p>
+            <div class="contact-email">andy.pazos@icloud.com</div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Andy Pazos</p>
+        </div>
+    </footer>
+
+    <!-- Modal for photo expansion -->
+    <div id="photoModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-content" id="modalImage"></div>
+    </div>
+
+    <script>
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                const headerHeight = document.querySelector('.header').offsetHeight;
+                const elementPosition = target.offsetTop - headerHeight;
+                
+                window.scrollTo({
+                    top: elementPosition,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Modal functions for photo expansion
+        function openModal(photoId) {
+            const modal = document.getElementById('photoModal');
+            const modalContent = document.getElementById('modalImage');
+            
+            // Here you would load the actual photo
+            modalContent.innerHTML = `<div style="background: #333; color: white; padding: 2rem; text-align: center; border-radius: 8px;">
+                <h3>Photo: ${photoId}</h3>
+                <p>Full-size photo would display here</p>
+                <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">Replace this placeholder with actual photo</p>
+            </div>`;
+            
+            modal.style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('photoModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside of image
+        window.onclick = function(event) {
+            const modal = document.getElementById('photoModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
