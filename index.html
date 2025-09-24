@@ -66,7 +66,7 @@
         .hero {
             height: 100vh;
             background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect width="1200" height="800" fill="%23334155"/><rect x="200" y="150" width="800" height="500" fill="%23475569" opacity="0.5"/><circle cx="600" cy="400" r="150" fill="%2364748b" opacity="0.3"/><text x="600" y="420" font-family="Arial" font-size="48" fill="white" text-anchor="middle">Sports Action Shot</text><text x="600" y="460" font-family="Arial" font-size="24" fill="rgba(255,255,255,0.8)" text-anchor="middle">Andy\'s Best Photo Goes Here</text></svg>');
+                        url('Images/IMG_5838.JPG');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -340,8 +340,9 @@
             <h2>About Me</h2>
             <div class="about-content">
                 <div class="about-image">
-                    <div class="profile-placeholder">
-                        Headshot of Andy with camera or behind-the-scenes photo goes here
+                    <img src="Images/andy-profile.jpg" alt="Andy Pazos with camera" style="width: 250px; height: 250px; object-fit: cover; border-radius: 10px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="profile-placeholder" style="display: none;">
+                        Profile photo coming soon
                     </div>
                 </div>
                 <div class="about-text">
@@ -360,34 +361,40 @@
             <div class="gallery-category">
                 <h3>Sports</h3>
                 <div class="photo-grid">
-                    <div class="photo-item" onclick="openModal('sports1')">
-                        <div class="photo-placeholder">
-                            Football action shot - quarterback throwing
+                    <div class="photo-item" onclick="openModal('Images/sports1.jpg', 'Football action shot')">
+                        <img src="Images/sports1.jpg" alt="Football action shot" style="width: 100%; height: 200px; object-fit: cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="photo-placeholder" style="display: none;">
+                            Football action shot - coming soon
                         </div>
                     </div>
-                    <div class="photo-item" onclick="openModal('sports2')">
-                        <div class="photo-placeholder">
-                            Basketball game - player shooting
+                    <div class="photo-item" onclick="openModal('Images/sports2.jpg', 'Basketball game')">
+                        <img src="Images/sports2.jpg" alt="Basketball game" style="width: 100%; height: 200px; object-fit: cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="photo-placeholder" style="display: none;">
+                            Basketball game - coming soon
                         </div>
                     </div>
-                    <div class="photo-item" onclick="openModal('sports3')">
-                        <div class="photo-placeholder">
-                            Soccer match - goal celebration
+                    <div class="photo-item" onclick="openModal('Images/sports3.jpg', 'Soccer match')">
+                        <img src="Images/sports3.jpg" alt="Soccer match" style="width: 100%; height: 200px; object-fit: cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="photo-placeholder" style="display: none;">
+                            Soccer match - coming soon
                         </div>
                     </div>
-                    <div class="photo-item" onclick="openModal('sports4')">
-                        <div class="photo-placeholder">
-                            Track and field - runner crossing finish
+                    <div class="photo-item" onclick="openModal('Images/sports4.jpg', 'Track and field')">
+                        <img src="Images/sports4.jpg" alt="Track and field" style="width: 100%; height: 200px; object-fit: cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="photo-placeholder" style="display: none;">
+                            Track and field - coming soon
                         </div>
                     </div>
-                    <div class="photo-item" onclick="openModal('sports5')">
-                        <div class="photo-placeholder">
-                            Baseball - batter swinging
+                    <div class="photo-item" onclick="openModal('Images/sports5.jpg', 'Baseball action')">
+                        <img src="Images/sports5.jpg" alt="Baseball action" style="width: 100%; height: 200px; object-fit: cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="photo-placeholder" style="display: none;">
+                            Baseball - coming soon
                         </div>
                     </div>
-                    <div class="photo-item" onclick="openModal('sports6')">
-                        <div class="photo-placeholder">
-                            Lacrosse action - player with stick
+                    <div class="photo-item" onclick="openModal('Images/sports6.jpg', 'Lacrosse action')">
+                        <img src="Images/sports6.jpg" alt="Lacrosse action" style="width: 100%; height: 200px; object-fit: cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="photo-placeholder" style="display: none;">
+                            Lacrosse action - coming soon
                         </div>
                     </div>
                 </div>
@@ -397,29 +404,34 @@
             <div class="gallery-category">
                 <h3>Nature/Outdoors</h3>
                 <div class="photo-grid">
-                    <div class="photo-item" onclick="openModal('nature1')">
-                        <div class="photo-placeholder">
-                            Georgia sunset landscape
+                    <div class="photo-item" onclick="openModal('Images/nature1.jpg', 'Georgia sunset landscape')">
+                        <img src="Images/nature1.jpg" alt="Georgia sunset landscape" style="width: 100%; height: 200px; object-fit: cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="photo-placeholder" style="display: none;">
+                            Georgia sunset - coming soon
                         </div>
                     </div>
-                    <div class="photo-item" onclick="openModal('nature2')">
-                        <div class="photo-placeholder">
-                            Morning light through trees
+                    <div class="photo-item" onclick="openModal('Images/nature2.jpg', 'Morning light through trees')">
+                        <img src="Images/nature2.jpg" alt="Morning light through trees" style="width: 100%; height: 200px; object-fit: cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="photo-placeholder" style="display: none;">
+                            Morning light - coming soon
                         </div>
                     </div>
-                    <div class="photo-item" onclick="openModal('nature3')">
-                        <div class="photo-placeholder">
-                            River reflection shot
+                    <div class="photo-item" onclick="openModal('Images/nature3.jpg', 'River reflection shot')">
+                        <img src="Images/nature3.jpg" alt="River reflection shot" style="width: 100%; height: 200px; object-fit: cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="photo-placeholder" style="display: none;">
+                            River reflection - coming soon
                         </div>
                     </div>
-                    <div class="photo-item" onclick="openModal('nature4')">
-                        <div class="photo-placeholder">
-                            Mountain trail vista
+                    <div class="photo-item" onclick="openModal('Images/nature4.jpg', 'Mountain trail vista')">
+                        <img src="Images/nature4.jpg" alt="Mountain trail vista" style="width: 100%; height: 200px; object-fit: cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="photo-placeholder" style="display: none;">
+                            Mountain trail - coming soon
                         </div>
                     </div>
-                    <div class="photo-item" onclick="openModal('nature5')">
-                        <div class="photo-placeholder">
-                            Autumn leaves close-up
+                    <div class="photo-item" onclick="openModal('Images/nature5.jpg', 'Autumn leaves close-up')">
+                        <img src="Images/nature5.jpg" alt="Autumn leaves close-up" style="width: 100%; height: 200px; object-fit: cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="photo-placeholder" style="display: none;">
+                            Autumn leaves - coming soon
                         </div>
                     </div>
                 </div>
@@ -429,29 +441,34 @@
             <div class="gallery-category">
                 <h3>People/Moments</h3>
                 <div class="photo-grid">
-                    <div class="photo-item" onclick="openModal('people1')">
-                        <div class="photo-placeholder">
-                            Senior portrait - classmate
+                    <div class="photo-item" onclick="openModal('Images/people1.jpg', 'Senior portrait')">
+                        <img src="Images/people1.jpg" alt="Senior portrait" style="width: 100%; height: 200px; object-fit: cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="photo-placeholder" style="display: none;">
+                            Senior portrait - coming soon
                         </div>
                     </div>
-                    <div class="photo-item" onclick="openModal('people2')">
-                        <div class="photo-placeholder">
-                            Candid moment - friends laughing
+                    <div class="photo-item" onclick="openModal('Images/people2.jpg', 'Friends laughing')">
+                        <img src="Images/people2.jpg" alt="Friends laughing" style="width: 100%; height: 200px; object-fit: cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="photo-placeholder" style="display: none;">
+                            Friends laughing - coming soon
                         </div>
                     </div>
-                    <div class="photo-item" onclick="openModal('people3')">
-                        <div class="photo-placeholder">
-                            School event - graduation ceremony
+                    <div class="photo-item" onclick="openModal('Images/people3.jpg', 'School event')">
+                        <img src="Images/people3.jpg" alt="School event" style="width: 100%; height: 200px; object-fit: cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="photo-placeholder" style="display: none;">
+                            School event - coming soon
                         </div>
                     </div>
-                    <div class="photo-item" onclick="openModal('people4')">
-                        <div class="photo-placeholder">
-                            Family gathering moment
+                    <div class="photo-item" onclick="openModal('Images/people4.jpg', 'Family gathering moment')">
+                        <img src="Images/people4.jpg" alt="Family gathering moment" style="width: 100%; height: 200px; object-fit: cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="photo-placeholder" style="display: none;">
+                            Family moment - coming soon
                         </div>
                     </div>
-                    <div class="photo-item" onclick="openModal('people5')">
-                        <div class="photo-placeholder">
-                            Street photography - interesting character
+                    <div class="photo-item" onclick="openModal('Images/people5.jpg', 'Street photography')">
+                        <img src="Images/people5.jpg" alt="Street photography" style="width: 100%; height: 200px; object-fit: cover;" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="photo-placeholder" style="display: none;">
+                            Street photography - coming soon
                         </div>
                     </div>
                 </div>
@@ -498,17 +515,11 @@
         });
 
         // Modal functions for photo expansion
-        function openModal(photoId) {
+        function openModal(imageSrc, caption) {
             const modal = document.getElementById('photoModal');
             const modalContent = document.getElementById('modalImage');
             
-            // Here you would load the actual photo
-            modalContent.innerHTML = `<div style="background: #333; color: white; padding: 2rem; text-align: center; border-radius: 8px;">
-                <h3>Photo: ${photoId}</h3>
-                <p>Full-size photo would display here</p>
-                <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">Replace this placeholder with actual photo</p>
-            </div>`;
-            
+            modalContent.innerHTML = `<img src="${imageSrc}" alt="${caption}" style="width: 100%; height: auto; border-radius: 8px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><div style="background: #333; color: white; padding: 2rem; text-align: center; border-radius: 8px; display: none;"><h3>${caption}</h3><p>Photo not available yet</p></div>`;
             modal.style.display = 'block';
         }
 
