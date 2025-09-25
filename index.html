@@ -2,11 +2,44 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+
+<title>Andy's Photos</title>
+<meta name="description" content="Sports, people, and everyday moments by Andy Pazos.">
+<link rel="canonical" href="https://andysphotoss.com/">
+<meta name="robots" content="index,follow">
+
+<!-- Favicons -->
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/icon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#ffffff">
+
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://andysphotoss.com/">
+<meta property="og:title" content="Andy's Photos">
+<meta property="og:description" content="Sports, people, and everyday moments by Andy Pazos.">
+<meta property="og:image" content="https://andysphotoss.com/Images/hero-share.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Andy's Photos</title>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   <meta name="description" content="Andy Pazos — high school photographer. Sports, people, and everyday moments.">
   <style>
+
+/* --- Accessibility + Mobile Tweaks (added) --- */
+.dropdown-toggle{background:transparent;border:0;font:inherit;color:#333;cursor:pointer}
+.dropdown-toggle:focus{outline:2px solid #000;outline-offset:2px}
+/* Prevent layout shift for thumbs */
+.thumb{width:100%;height:auto;display:block;aspect-ratio:4/3;object-fit:cover}
+@media (max-width:768px){
+  .section{padding:1.75rem 0}
+  .nav-container{padding:0 1rem}
+}
+
     *{margin:0;padding:0;box-sizing:border-box}
     body{font-family:'Lato',sans-serif;line-height:1.6;color:#333;background:#fff}
 
@@ -90,15 +123,11 @@
       .hero{height:80vh}
       .section{padding:2rem 0}
     }
-    .dropdown-toggle {
-  background: transparent; border: 0; font: inherit; color: #333; cursor: pointer;
-}
-.dropdown-toggle:focus { outline: 2px solid #000; outline-offset: 2px; }
-
     @media (max-width:480px){.nav-container{flex-direction:column;gap:1rem}.nav-menu{gap:1.5rem}}
   </style>
 </head>
 <body>
+<a href="#main" class="sr-only">Skip to content</a>
   <!-- Header -->
   <header class="header">
     <div class="nav-container">
@@ -108,9 +137,7 @@
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About Me</a></li>
           <li class="dropdown">
-  <button class="dropdown-toggle" aria-expanded="false" aria-controls="galleryDropdown">
-    Gallery ▾
-  </button>
+  <button class="dropdown-toggle" aria-expanded="false" aria-controls="galleryDropdown">Gallery ▾</button>
   <div class="dropdown-content" id="galleryDropdown">
     <a href="#sports">Sports</a>
     <a href="#band">Band / Color Guard</a>
@@ -118,7 +145,6 @@
     <a href="#people">People / Moments</a>
   </div>
 </li>
-
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -126,6 +152,7 @@
   </header>
 
   <!-- Hero Section -->
+<main id="main">
 <section id="home" class="hero">
   <div class="hero-content">
     <h1>Hi, I'm Andy</h1>
@@ -140,10 +167,10 @@
     <h2>About Me</h2>
     <div class="about-content">
       <div class="about-image">
-        <img src="Images/People_Moments/about_me.jpeg"
+        <img class="thumb" src="Images/People_Moments/about_me.jpeg"
              alt="Andy Pazos taking a self-portrait with camera"
              title="Andy behind the camera"
-             style="width:250px;height:250px;object-fit:cover;border-radius:10px">
+             style="width:250px;height:250px;object-fit:cover;border-radius:10px" loading="lazy" decoding="async">
       </div>
       <div class="about-text">
         <p>I started out taking photos at my friends' sports games, and it quickly became something I enjoy. I like capturing moments, whether it's sports, nature, or everyday life, and finding new ways to see things through my camera.</p>
@@ -205,10 +232,10 @@
            loading="lazy">
     </div>
     
-    <div class="photo-item" onclick="openModal('Images/Track/Track3.jpeg','Multiple Track runnings reaching finish line')">
+    <div class="photo-item" onclick="openModal('Images/Track/Track3.jpeg','Multiple Track runners reaching finish line')">
       <img class="thumb" 
            src="Images/Track/Track3.jpeg" 
-           alt="Multiple Track runnings reaching finish line" 
+           alt="Multiple Track runners reaching finish line" 
            title="Track runners reaching finish line" 
            loading="lazy">
     </div>
@@ -468,9 +495,9 @@
            loading="lazy">
     </div>
 
-    <div class="photo-item" onclick="openModal('Images/Nature/Narture6.jpeg','Deer close-up portrait')">
+    <div class="photo-item" onclick="openModal('Images/Nature/Nature6.jpeg','Deer close-up portrait')">
       <img class="thumb" 
-           src="Images/Nature/Narture6.jpeg" 
+           src="Images/Nature/Nature6.jpeg" 
            alt="Close-up portrait of young deer with alert ears and gentle expression" 
            title="Deer close-up portrait"
            loading="lazy">
@@ -566,7 +593,7 @@
       <div class="photo-item" onclick="openModal('Images/People_Moments/Person7.png','Color Guard ')">
       <img class="thumb" 
            src="Images/People_Moments/Person7.png" 
-           alt="Collor Guard holding yellow flag" 
+           alt="Color Guard holding yellow flag" 
            title="Color Guard" 
            loading="lazy">
     </div>
@@ -620,28 +647,21 @@
   </div>
 
   <script>
-   // Open/close Gallery dropdown
-document.querySelector('.dropdown-toggle')?.addEventListener('click', (e) => {
-  const dd = e.currentTarget.closest('.dropdown');
-  const open = dd.classList.toggle('active');
-  e.currentTarget.setAttribute('aria-expanded', open ? 'true' : 'false');
-});
+    // Dropdown functionality
+    function toggleDropdown(event) {
+      event.preventDefault();
+      const dropdown = event.target.closest('.dropdown');
+      dropdown.classList.toggle('active');
+    }
 
-// Close dropdown on outside click or Escape
-document.addEventListener('click', (e) => {
-  const dd = document.querySelector('.dropdown');
-  if (dd && !e.target.closest('.dropdown')) {
-    dd.classList.remove('active');
-    document.querySelector('.dropdown-toggle')?.setAttribute('aria-expanded','false');
-  }
-});
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') {
-    document.querySelector('.dropdown')?.classList.remove('active');
-    document.querySelector('.dropdown-toggle')?.setAttribute('aria-expanded','false');
-  }
-});
-
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(event) {
+      if (!event.target.closest('.dropdown')) {
+        document.querySelectorAll('.dropdown').forEach(dropdown => {
+          dropdown.classList.remove('active');
+        });
+      }
+    });
 
     // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
@@ -665,12 +685,52 @@ document.addEventListener('keydown', (e) => {
     function openModal(src, altText=''){
       const modal=document.getElementById('photoModal');
       const content=document.getElementById('modalImage');
-      content.innerHTML=`<img src="${src}" alt="${altText}" style="width:100%;border-radius:8px">`;
+      content.innerHTML=`<img class="thumb" src="${src}" alt="${altText}" style="width:100%;border-radius:8px" loading="lazy" decoding="async">`;
       modal.style.display='block';
     }
     function closeModal(){ document.getElementById('photoModal').style.display='none'; }
     window.onclick=e=>{ if(e.target.id==='photoModal') closeModal(); };
     document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeModal(); });
   </script>
+<script>
+
+// --- Dropdown behavior (added) ---
+document.querySelector('.dropdown-toggle')?.addEventListener('click', (e) => {
+  const dd = e.currentTarget.closest('.dropdown');
+  const open = dd.classList.toggle('active');
+  e.currentTarget.setAttribute('aria-expanded', open ? 'true' : 'false');
+});
+document.addEventListener('click', (e) => {
+  const dd = document.querySelector('.dropdown');
+  if(dd && !e.target.closest('.dropdown')){
+    dd.classList.remove('active');
+    document.querySelector('.dropdown-toggle')?.setAttribute('aria-expanded','false');
+  }
+});
+document.addEventListener('keydown', (e) => {
+  if(e.key === 'Escape'){
+    const dd = document.querySelector('.dropdown');
+    dd?.classList.remove('active');
+    document.querySelector('.dropdown-toggle')?.setAttribute('aria-expanded','false');
+    try{ closeModal(); }catch(err){}
+  }
+});
+
+// --- Modal focus return (added) ---
+let __lastFocused = null;
+function openModal(src, altText=''){
+  __lastFocused = document.activeElement;
+  const modal = document.getElementById('photoModal');
+  const content = document.getElementById('modalImage');
+  if(content) content.innerHTML = '<img class="thumb" src="'+src+'" alt="'+altText.replace(/"/g,'&quot;')+'" style="width:100%;border-radius:8px" loading="lazy" decoding="async">';
+  if(modal) { modal.style.display='block'; modal.querySelector('.close')?.focus(); }
+}
+function closeModal(){
+  const modal = document.getElementById('photoModal');
+  if(modal) modal.style.display='none';
+  if(__lastFocused) __lastFocused.focus();
+}
+
+</script>
 </body>
 </html>
