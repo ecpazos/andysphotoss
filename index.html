@@ -27,7 +27,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Andy's Photos</title>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-  <meta name="description" content="Andy Pazos — high school photographer. Sports, people, and everyday moments.">
+  <meta name="description" content="Andy Pazos â€" high school photographer. Sports, people, and everyday moments.">
   <style>
 
 /* --- Accessibility + Mobile Tweaks (added) --- */
@@ -58,7 +58,7 @@
     
     .nav-menu a{text-decoration:none;color:#333;font-weight:400;transition:color .3s}
     .nav-menu a:hover{color:#666}
-    .dropdown > a::after{content:' ▾';font-size:0.8rem;margin-left:5px}
+    .dropdown > a::after{content:' â–¾';font-size:0.8rem;margin-left:5px}
 
     /* Anchor offset so sections aren't hidden under header */
     :target{scroll-margin-top:90px}
@@ -104,12 +104,70 @@
     .contact-email{font-size:1.2rem;font-weight:700;color:#333}
     .footer{background:#333;color:#fff;text-align:center;padding:2rem 0;font-size:.9rem}
 
-    /* Modal */
-    .modal{display:none;position:fixed;z-index:2000;inset:0;background:rgba(0,0,0,.9)}
-    .modal-content{margin:5% auto;display:block;width:80%;max-width:900px;animation:zoom .25s}
-    @keyframes zoom{from{transform:scale(.9);opacity:.2}to{transform:scale(1);opacity:1}}
-    .close{position:absolute;top:15px;right:35px;color:#f1f1f1;font-size:40px;font-weight:bold;cursor:pointer}
-    .close:hover{color:#bbb}
+    /* FIXED MODAL STYLING */
+    .modal{
+      display:none;
+      position:fixed;
+      z-index:2000;
+      left:0;
+      top:0;
+      width:100%;
+      height:100%;
+      overflow:auto;
+      background:rgba(0,0,0,.9);
+      padding:20px;
+      box-sizing:border-box;
+    }
+    
+    .modal-content{
+      margin:auto;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      width:100%;
+      height:100%;
+      max-width:95vw;
+      max-height:95vh;
+      animation:zoom .25s;
+    }
+    
+    .modal-content img{
+      max-width:100%;
+      max-height:100%;
+      width:auto;
+      height:auto;
+      object-fit:contain;
+      border-radius:8px;
+      box-shadow:0 4px 20px rgba(0,0,0,.5);
+    }
+    
+    @keyframes zoom{
+      from{transform:scale(.9);opacity:.2}
+      to{transform:scale(1);opacity:1}
+    }
+    
+    .close{
+      position:absolute;
+      top:15px;
+      right:35px;
+      color:#f1f1f1;
+      font-size:40px;
+      font-weight:bold;
+      cursor:pointer;
+      z-index:2001;
+      background:rgba(0,0,0,.5);
+      border-radius:50%;
+      width:60px;
+      height:60px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    
+    .close:hover{
+      color:#bbb;
+      background:rgba(0,0,0,.7);
+    }
 
     /* Mobile */
     @media (max-width:768px){
@@ -122,6 +180,16 @@
       .photo-grid{grid-template-columns:1fr}
       .hero{height:80vh}
       .section{padding:2rem 0}
+      
+      /* Mobile modal adjustments */
+      .modal{padding:10px}
+      .close{
+        top:10px;
+        right:15px;
+        font-size:30px;
+        width:50px;
+        height:50px;
+      }
     }
     @media (max-width:480px){.nav-container{flex-direction:column;gap:1rem}.nav-menu{gap:1.5rem}}
   </style>
@@ -137,7 +205,7 @@
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About Me</a></li>
           <li class="dropdown">
-  <button class="dropdown-toggle" aria-expanded="false" aria-controls="galleryDropdown">Gallery ▾</button>
+  <button class="dropdown-toggle" aria-expanded="false" aria-controls="galleryDropdown">Gallery â–¾</button>
   <div class="dropdown-content" id="galleryDropdown">
     <a href="#sports">Sports</a>
     <a href="#band">Band / Color Guard</a>
@@ -640,7 +708,7 @@
     </div>
   </footer>
 
-  <!-- Modal -->
+  <!-- FIXED MODAL -->
   <div id="photoModal" class="modal" role="dialog" aria-modal="true" aria-label="Full-size photo">
     <span class="close" onclick="closeModal()" aria-label="Close">&times;</span>
     <div class="modal-content" id="modalImage"></div>
@@ -681,56 +749,89 @@
       });
     });
 
-    // Modal
+    // FIXED MODAL JAVASCRIPT
     function openModal(src, altText=''){
-      const modal=document.getElementById('photoModal');
-      const content=document.getElementById('modalImage');
-      content.innerHTML=`<img class="thumb" src="${src}" alt="${altText}" style="width:100%;border-radius:8px" loading="lazy" decoding="async">`;
-      modal.style.display='block';
+      const modal = document.getElementById('photoModal');
+      const content = document.getElementById('modalImage');
+      
+      // Create image element with proper styling
+      content.innerHTML = `<img src="${src}" alt="${altText}" />`;
+      modal.style.display = 'block';
+      
+      // Prevent body scrolling when modal is open
+      document.body.style.overflow = 'hidden';
     }
-    function closeModal(){ document.getElementById('photoModal').style.display='none'; }
-    window.onclick=e=>{ if(e.target.id==='photoModal') closeModal(); };
-    document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeModal(); });
+    
+    function closeModal() { 
+      const modal = document.getElementById('photoModal');
+      modal.style.display = 'none';
+      
+      // Restore body scrolling
+      document.body.style.overflow = 'auto';
+    }
+    
+    // Close modal when clicking outside the image
+    window.onclick = function(e) { 
+      if (e.target.id === 'photoModal') {
+        closeModal(); 
+      }
+    };
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) { 
+      if (e.key === 'Escape') {
+        closeModal(); 
+      }
+    });
   </script>
-<script>
 
-// --- Dropdown behavior (added) ---
-document.querySelector('.dropdown-toggle')?.addEventListener('click', (e) => {
-  const dd = e.currentTarget.closest('.dropdown');
-  const open = dd.classList.toggle('active');
-  e.currentTarget.setAttribute('aria-expanded', open ? 'true' : 'false');
-});
-document.addEventListener('click', (e) => {
-  const dd = document.querySelector('.dropdown');
-  if(dd && !e.target.closest('.dropdown')){
-    dd.classList.remove('active');
-    document.querySelector('.dropdown-toggle')?.setAttribute('aria-expanded','false');
-  }
-});
-document.addEventListener('keydown', (e) => {
-  if(e.key === 'Escape'){
-    const dd = document.querySelector('.dropdown');
-    dd?.classList.remove('active');
-    document.querySelector('.dropdown-toggle')?.setAttribute('aria-expanded','false');
-    try{ closeModal(); }catch(err){}
-  }
-});
+  <script>
+    // --- Dropdown behavior (added) ---
+    document.querySelector('.dropdown-toggle')?.addEventListener('click', (e) => {
+      const dd = e.currentTarget.closest('.dropdown');
+      const open = dd.classList.toggle('active');
+      e.currentTarget.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    
+    document.addEventListener('click', (e) => {
+      const dd = document.querySelector('.dropdown');
+      if(dd && !e.target.closest('.dropdown')){
+        dd.classList.remove('active');
+        document.querySelector('.dropdown-toggle')?.setAttribute('aria-expanded','false');
+      }
+    });
+    
+    document.addEventListener('keydown', (e) => {
+      if(e.key === 'Escape'){
+        const dd = document.querySelector('.dropdown');
+        dd?.classList.remove('active');
+        document.querySelector('.dropdown-toggle')?.setAttribute('aria-expanded','false');
+        try{ closeModal(); }catch(err){}
+      }
+    });
 
-// --- Modal focus return (added) ---
-let __lastFocused = null;
-function openModal(src, altText=''){
-  __lastFocused = document.activeElement;
-  const modal = document.getElementById('photoModal');
-  const content = document.getElementById('modalImage');
-  if(content) content.innerHTML = '<img class="thumb" src="'+src+'" alt="'+altText.replace(/"/g,'&quot;')+'" style="width:100%;border-radius:8px" loading="lazy" decoding="async">';
-  if(modal) { modal.style.display='block'; modal.querySelector('.close')?.focus(); }
-}
-function closeModal(){
-  const modal = document.getElementById('photoModal');
-  if(modal) modal.style.display='none';
-  if(__lastFocused) __lastFocused.focus();
-}
-
-</script>
+    // --- Modal focus return (added) ---
+    let __lastFocused = null;
+    
+    // Override the openModal function to handle focus properly
+    const originalOpenModal = openModal;
+    openModal = function(src, altText='') {
+      __lastFocused = document.activeElement;
+      originalOpenModal(src, altText);
+      // Focus the close button for accessibility
+      setTimeout(() => {
+        document.querySelector('.close')?.focus();
+      }, 100);
+    };
+    
+    // Override closeModal to restore focus
+    const originalCloseModal = closeModal;
+    closeModal = function() {
+      originalCloseModal();
+      if(__lastFocused) {
+        __lastFocused.focus();
+      }
+    };
+  </script>
 </body>
 </html>
