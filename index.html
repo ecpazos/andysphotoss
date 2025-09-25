@@ -21,13 +21,13 @@
     .dropdown-content{display:none;position:absolute;background:#fff;min-width:200px;box-shadow:0 8px 16px rgba(0,0,0,.1);border-radius:5px;top:100%;left:0;margin-top:10px;z-index:1001}
     .dropdown-content a{color:#333;padding:12px 16px;text-decoration:none;display:block;transition:background .3s}
     .dropdown-content a:hover{background:#f8f9fa;color:#666}
-    .dropdown:hover .dropdown-content{display:block}
+    .dropdown.active .dropdown-content{display:block}
     
     .nav-menu a{text-decoration:none;color:#333;font-weight:400;transition:color .3s}
     .nav-menu a:hover{color:#666}
     .dropdown > a::after{content:' ▾';font-size:0.8rem;margin-left:5px}
 
-    /* Anchor offset so sections aren't hidden under header */
+    /* Anchor offset so sections aren't hidden under  */
     :target{scroll-margin-top:90px}
 
     /* Hero */
@@ -103,7 +103,8 @@
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About Me</a></li>
           <li class="dropdown">
-            <a href="#gallery">Gallery</a>
+             <a href="#gallery" onclick="toggleDropdown(event)">Gallery</a>
+            <div class="dropdown-content" id="galleryDropdown">
             <div class="dropdown-content">
               <a href="#sports">Sports</a>
               <a href="#band">Band / Color Guard</a>
