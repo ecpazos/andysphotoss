@@ -103,14 +103,17 @@
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About Me</a></li>
           <li class="dropdown">
-            <a href="#gallery" onclick="toggleDropdown(event)">Gallery</a>
-            <div class="dropdown-content" id="galleryDropdown">
-              <a href="#sports">Sports</a>
-              <a href="#band">Band / Color Guard</a>
-              <a href="#nature">Nature / Outdoors</a>
-              <a href="#people">People / Moments</a>
-            </div>
-          </li>
+  <button class="dropdown-toggle" aria-expanded="false" aria-controls="galleryDropdown">
+    Gallery ▾
+  </button>
+  <div class="dropdown-content" id="galleryDropdown">
+    <a href="#sports">Sports</a>
+    <a href="#band">Band / Color Guard</a>
+    <a href="#nature">Nature / Outdoors</a>
+    <a href="#people">People / Moments</a>
+  </div>
+</li>
+
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
