@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Andy's Photos</title>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-  <meta name="description" content="Andy Pazos – high school photographer. Sports, people, and everyday moments.">
+  <meta name="description" content="Andy Pazos — high school photographer. Sports, people, and everyday moments.">
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
     body{font-family:'Lato',sans-serif;line-height:1.6;color:#333;background:#fff}
@@ -27,7 +27,7 @@
     .nav-menu a:hover{color:#666}
     .dropdown > a::after{content:' ▾';font-size:0.8rem;margin-left:5px}
 
-    /* Anchor offset so sections aren't hidden under  */
+    /* Anchor offset so sections aren't hidden under header */
     :target{scroll-margin-top:90px}
 
     /* Hero */
@@ -103,9 +103,8 @@
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About Me</a></li>
           <li class="dropdown">
-             <a href="#gallery" onclick="toggleDropdown(event)">Gallery</a>
+            <a href="#gallery" onclick="toggleDropdown(event)">Gallery</a>
             <div class="dropdown-content" id="galleryDropdown">
-            <div class="dropdown-content">
               <a href="#sports">Sports</a>
               <a href="#band">Band / Color Guard</a>
               <a href="#nature">Nature / Outdoors</a>
@@ -607,13 +606,37 @@
   </div>
 
   <script>
+    // Dropdown functionality
+    function toggleDropdown(event) {
+      event.preventDefault();
+      const dropdown = event.target.closest('.dropdown');
+      dropdown.classList.toggle('active');
+    }
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(event) {
+      if (!event.target.closest('.dropdown')) {
+        document.querySelectorAll('.dropdown').forEach(dropdown => {
+          dropdown.classList.remove('active');
+        });
+      }
+    });
+
     // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
       a.addEventListener('click',e=>{
-        e.preventDefault();
-        const target=document.querySelector(a.getAttribute('href'));
-        const headerHeight=document.querySelector('.header').offsetHeight;
-        window.scrollTo({top:target.offsetTop-headerHeight,behavior:'smooth'});
+        // Don't prevent default for dropdown toggle
+        if (!a.onclick) {
+          e.preventDefault();
+          const target=document.querySelector(a.getAttribute('href'));
+          const headerHeight=document.querySelector('.header').offsetHeight;
+          window.scrollTo({top:target.offsetTop-headerHeight,behavior:'smooth'});
+          
+          // Close dropdown after clicking gallery section links
+          document.querySelectorAll('.dropdown').forEach(dropdown => {
+            dropdown.classList.remove('active');
+          });
+        }
       });
     });
 
