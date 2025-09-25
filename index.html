@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Andy's Photos</title>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-  <meta name="description" content="Andy Pazos — high school photographer. Sports, people, and everyday moments.">
+  <meta name="description" content="Andy Pazos – high school photographer. Sports, people, and everyday moments.">
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
     body{font-family:'Lato',sans-serif;line-height:1.6;color:#333;background:#fff}
@@ -14,9 +14,18 @@
     .header{position:fixed;top:0;width:100%;background:#fff;box-shadow:0 2px 5px rgba(0,0,0,.1);z-index:1000;padding:1rem 0}
     .nav-container{max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;justify-content:space-between;align-items:center}
     .logo{font-size:1.5rem;font-weight:700;color:#333}
-    .nav-menu{display:flex;list-style:none;gap:2rem}
+    .nav-menu{display:flex;list-style:none;gap:2rem;align-items:center}
+    
+    /* Dropdown styling */
+    .dropdown{position:relative;display:inline-block}
+    .dropdown-content{display:none;position:absolute;background:#fff;min-width:200px;box-shadow:0 8px 16px rgba(0,0,0,.1);border-radius:5px;top:100%;left:0;margin-top:10px;z-index:1001}
+    .dropdown-content a{color:#333;padding:12px 16px;text-decoration:none;display:block;transition:background .3s}
+    .dropdown-content a:hover{background:#f8f9fa;color:#666}
+    .dropdown:hover .dropdown-content{display:block}
+    
     .nav-menu a{text-decoration:none;color:#333;font-weight:400;transition:color .3s}
     .nav-menu a:hover{color:#666}
+    .dropdown > a::after{content:' ▾';font-size:0.8rem;margin-left:5px}
 
     /* Anchor offset so sections aren't hidden under header */
     :target{scroll-margin-top:90px}
@@ -72,6 +81,7 @@
     /* Mobile */
     @media (max-width:768px){
       .nav-menu{gap:1rem}
+      .dropdown-content{min-width:160px}
       .hero h1{font-size:2rem}
       .hero p{font-size:1rem}
       .about-content{grid-template-columns:1fr;text-align:center}
@@ -92,7 +102,15 @@
         <ul class="nav-menu">
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About Me</a></li>
-          <li><a href="#gallery">Gallery</a></li>
+          <li class="dropdown">
+            <a href="#gallery">Gallery</a>
+            <div class="dropdown-content">
+              <a href="#sports">Sports</a>
+              <a href="#band">Band / Color Guard</a>
+              <a href="#nature">Nature / Outdoors</a>
+              <a href="#people">People / Moments</a>
+            </div>
+          </li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -120,8 +138,8 @@
              style="width:250px;height:250px;object-fit:cover;border-radius:10px">
       </div>
       <div class="about-text">
-        <p>I started out taking photos at my friends’ sports games, and it quickly became something I enjoy. I like capturing moments, whether it’s sports, nature, or everyday life, and finding new ways to see things through my camera.</p>
-    <p> When I’m not taking photos, I’m usually hanging out with friends or playing video games.</p>
+        <p>I started out taking photos at my friends' sports games, and it quickly became something I enjoy. I like capturing moments, whether it's sports, nature, or everyday life, and finding new ways to see things through my camera.</p>
+    <p> When I'm not taking photos, I'm usually hanging out with friends or playing video games.</p>
       </div>
     </div>
   </div>
@@ -133,7 +151,7 @@
       <h2>Gallery</h2>
 
    <!-- Sports -->
-<div class="gallery-category">
+<div id="sports" class="gallery-category">
   <h3>Sports</h3>
   <div class="photo-grid">
 
@@ -141,8 +159,8 @@
     <div class="photo-item" onclick="openModal('Images/1A2848A3-3E94-4073-867F-8D2AEF47B63F_1_105_c.jpeg','Football defensive play')">
       <img class="thumb" 
            src="Images/1A2848A3-3E94-4073-867F-8D2AEF47B63F_1_105_c.jpeg" 
-           alt="Football players engaged in defensive play with referee monitoring the action" 
-           title="Football defensive play" 
+           alt="Football players lined up at scrimmage line during night game, with offensive and defensive lines facing each other on green field with yard markers, spectators visible in stadium stands" 
+           title="Football line of scrimmage" 
            loading="lazy">
     </div>
     
@@ -150,14 +168,14 @@
       <img class="thumb" 
            src="Images/IMG_5832.JPG" 
            alt="Two football players in maroon and gold uniforms celebrating touchdown by jumping and embracing in end zone during night game, referee watching nearby" 
-           title="Football sideline celebration" 
+           title="Teammates celebrating touchdown" 
            loading="lazy">
     </div>
 
     <div class="photo-item" onclick="openModal('Images/F9F149F1-CE10-4BD0-875F-CA254BB3198D_1_105_c.jpeg','Football huddle under lights')">
       <img class="thumb" 
            src="Images/F9F149F1-CE10-4BD0-875F-CA254BB3198D_1_105_c.jpeg" 
-           alt="Quarterback throwing football during night game while defensive player in maroon and gold rushes toward him, referee and crowd visible in background" 
+           alt="Quarterback in navy blue uniform throwing football during night game while defensive player in maroon and gold rushes toward him, referee and crowd visible in background" 
            title="QB under pressure making the throw" 
            loading="lazy">
     </div>
@@ -240,7 +258,7 @@
 </div>
 
       <!-- Band / Color Guard -->
-<div class="gallery-category">
+<div id="band" class="gallery-category">
   <h3>Band / Color Guard</h3>
   <div class="photo-grid">
 
@@ -349,7 +367,7 @@
 
 
      <!-- Nature/Outdoors -->
-<div class="gallery-category">
+<div id="nature" class="gallery-category">
   <h3>Nature/Outdoors</h3>
   <div class="photo-grid">
 
@@ -455,7 +473,7 @@
 
 
      <!-- People/Moments -->
-<div class="gallery-category">
+<div id="people" class="gallery-category">
   <h3>People/Moments</h3>
   <div class="photo-grid">
 
