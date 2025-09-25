@@ -90,6 +90,11 @@
       .hero{height:80vh}
       .section{padding:2rem 0}
     }
+    .dropdown-toggle {
+  background: transparent; border: 0; font: inherit; color: #333; cursor: pointer;
+}
+.dropdown-toggle:focus { outline: 2px solid #000; outline-offset: 2px; }
+
     @media (max-width:480px){.nav-container{flex-direction:column;gap:1rem}.nav-menu{gap:1.5rem}}
   </style>
 </head>
@@ -615,21 +620,28 @@
   </div>
 
   <script>
-    // Dropdown functionality
-    function toggleDropdown(event) {
-      event.preventDefault();
-      const dropdown = event.target.closest('.dropdown');
-      dropdown.classList.toggle('active');
-    }
+   // Open/close Gallery dropdown
+document.querySelector('.dropdown-toggle')?.addEventListener('click', (e) => {
+  const dd = e.currentTarget.closest('.dropdown');
+  const open = dd.classList.toggle('active');
+  e.currentTarget.setAttribute('aria-expanded', open ? 'true' : 'false');
+});
 
-    // Close dropdown when clicking outside
-    document.addEventListener('click', function(event) {
-      if (!event.target.closest('.dropdown')) {
-        document.querySelectorAll('.dropdown').forEach(dropdown => {
-          dropdown.classList.remove('active');
-        });
-      }
-    });
+// Close dropdown on outside click or Escape
+document.addEventListener('click', (e) => {
+  const dd = document.querySelector('.dropdown');
+  if (dd && !e.target.closest('.dropdown')) {
+    dd.classList.remove('active');
+    document.querySelector('.dropdown-toggle')?.setAttribute('aria-expanded','false');
+  }
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    document.querySelector('.dropdown')?.classList.remove('active');
+    document.querySelector('.dropdown-toggle')?.setAttribute('aria-expanded','false');
+  }
+});
+
 
     // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
