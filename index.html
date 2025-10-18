@@ -2,68 +2,59 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-
-<title>Andy's Photos</title>
-<meta name="description" content="Sports, people, and everyday moments by Andy Pazos.">
-<link rel="canonical" href="https://andysphotoss.com/">
-<meta name="robots" content="index,follow">
-
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-6Y3CDZJNVJ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-6Y3CDZJNVJ');
-</script>
-
-<!-- Favicons -->
-<link rel="icon" href="/favicon.ico">
-  <!-- SVG favicon for modern browsers -->
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  
-<link rel="icon" type="image/png" sizes="32x32" href="/icons/icon-32.png">
-<link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
-<link rel="manifest" href="/site.webmanifest">
-<meta name="theme-color" content="#ffffff">
-
-<!-- Open Graph / Twitter -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://andysphotoss.com/">
-<meta property="og:title" content="Andy's Photos">
-<meta property="og:description" content="Sports, people, and everyday moments by Andy Pazos.">
-<meta property="og:image" content="https://andysphotoss.com/Images/People_Moments/about_me.jpeg">
-<meta name="twitter:card" content="summary_large_image">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Andy's Photos</title>
+  <meta name="description" content="Sports, people, and everyday moments by Andy Pazos.">
+  <link rel="canonical" href="https://andysphotoss.com/">
+  <meta name="robots" content="index,follow">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6Y3CDZJNVJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-6Y3CDZJNVJ');
+  </script>
+
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="32x32" href="/icons/icon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://andysphotoss.com/">
+  <meta property="og:title" content="Andy's Photos">
+  <meta property="og:description" content="Sports, people, and everyday moments by Andy Pazos.">
+  <meta property="og:image" content="https://andysphotoss.com/Images/People_Moments/about_me.jpeg">
+  <meta name="twitter:card" content="summary_large_image">
+
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-  <meta name="description" content="Andy Pazos â€" high school photographer. Sports, people, and everyday moments.">
+  
   <style>
-
-/* --- Accessibility + Mobile Tweaks (added) --- */
-.dropdown-toggle{background:transparent;border:0;font:inherit;color:#333;cursor:pointer}
-.dropdown-toggle:focus{outline:2px solid #000;outline-offset:2px}
-/* Prevent layout shift for thumbs */
-.thumb{width:100%;height:auto;display:block;aspect-ratio:4/3;object-fit:cover}
-@media (max-width:768px){
-  .section{padding:1.75rem 0}
-  .nav-container{padding:0 1rem}
-}
-
+    /* Base Styles */
     *{margin:0;padding:0;box-sizing:border-box}
     body{font-family:'Lato',sans-serif;line-height:1.6;color:#333;background:#fff}
 
-    /* er */
-    .er{position:fixed;top:0;width:100%;background:#fff;box-shadow:0 2px 5px rgba(0,0,0,.1);z-index:1000;padding:1rem 0}
+    /* Accessibility */
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+    
+    /* Header */
+    .header{position:fixed;top:0;width:100%;background:#fff;box-shadow:0 2px 5px rgba(0,0,0,.1);z-index:1000;padding:1rem 0}
     .nav-container{max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;justify-content:space-between;align-items:center}
     .logo{font-size:1.5rem;font-weight:700;color:#333}
     .nav-menu{display:flex;list-style:none;gap:2rem;align-items:center}
     
     /* Dropdown styling */
     .dropdown{position:relative;display:inline-block}
+    .dropdown-toggle{background:transparent;border:0;font:inherit;color:#333;cursor:pointer;font-weight:400}
+    .dropdown-toggle:focus{outline:2px solid #000;outline-offset:2px}
+    .dropdown-toggle::after{content:' ▾';font-size:0.8rem;margin-left:5px}
     .dropdown-content{display:none;position:absolute;background:#fff;min-width:200px;box-shadow:0 8px 16px rgba(0,0,0,.1);border-radius:5px;top:100%;left:0;margin-top:10px;z-index:1001}
     .dropdown-content a{color:#333;padding:12px 16px;text-decoration:none;display:block;transition:background .3s}
     .dropdown-content a:hover{background:#f8f9fa;color:#666}
@@ -71,17 +62,21 @@
     
     .nav-menu a{text-decoration:none;color:#333;font-weight:400;transition:color .3s}
     .nav-menu a:hover{color:#666}
-    .dropdown > a::after{content:' â–¾';font-size:0.8rem;margin-left:5px}
 
-    /* Anchor offset so sections aren't hidden under header */
+    /* Hamburger Menu */
+    .hamburger{display:none;flex-direction:column;cursor:pointer;padding:10px;z-index:1001}
+    .hamburger span{width:25px;height:3px;background:#333;margin:3px 0;transition:0.3s;border-radius:3px}
+    .hamburger.active span:nth-child(1){transform:rotate(-45deg) translate(-5px, 6px)}
+    .hamburger.active span:nth-child(2){opacity:0}
+    .hamburger.active span:nth-child(3){transform:rotate(45deg) translate(-5px, -6px)}
+
+    /* Anchor offset */
     :target{scroll-margin-top:90px}
 
     /* Hero */
     .hero{
       height:100vh;
-      background:
-        linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
-        url('Images/Football/Football6.JPG');
+      background:linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),url('Images/Football/Football6.JPG');
       background-size:cover;background-position:center;
       display:flex;align-items:center;justify-content:center;
       color:#fff;text-align:center
@@ -99,7 +94,6 @@
     .about{background:#f8f9fa}
     .about-content{display:grid;grid-template-columns:1fr 2fr;gap:3rem;align-items:center;max-width:900px;margin:0 auto}
     .about-image{text-align:center}
-    .profile-placeholder{width:250px;height:250px;background:#e9ecef;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#666;font-size:1rem;margin:0 auto;text-align:center;padding:2rem}
     .about-text{font-size:1.1rem;line-height:1.8;color:#555}
 
     /* Gallery */
@@ -108,8 +102,7 @@
     .photo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem;margin-bottom:2rem}
     .photo-item{background:#f8f9fa;border-radius:8px;overflow:hidden;cursor:pointer;transition:transform .3s}
     .photo-item:hover{transform:translateY(-5px)}
-    .thumb{width:100%;height:200px;object-fit:cover;display:block}
-    .photo-placeholder{height:200px;background:#e9ecef;display:none;align-items:center;justify-content:center;color:#666;font-size:.9rem;text-align:center;padding:1rem}
+    .thumb{width:100%;height:auto;display:block;aspect-ratio:4/3;object-fit:cover}
 
     /* Contact + Footer */
     .contact{background:#f8f9fa;text-align:center}
@@ -117,115 +110,84 @@
     .contact-email{font-size:1.2rem;font-weight:700;color:#333}
     .footer{background:#333;color:#fff;text-align:center;padding:2rem 0;font-size:.9rem}
 
-    /* FIXED MODAL STYLING */
+    /* Modal */
     .modal{
-      display:none;
-      position:fixed;
-      z-index:2000;
-      left:0;
-      top:0;
-      width:100%;
-      height:100%;
-      overflow:auto;
-      background:rgba(0,0,0,.9);
-      padding:20px;
-      box-sizing:border-box;
+      display:none;position:fixed;z-index:2000;left:0;top:0;width:100%;height:100%;
+      overflow:auto;background:rgba(0,0,0,.9);padding:20px;box-sizing:border-box;
     }
-    
     .modal-content{
-      margin:auto;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      width:100%;
-      height:100%;
-      max-width:95vw;
-      max-height:95vh;
-      animation:zoom .25s;
+      margin:auto;display:flex;align-items:center;justify-content:center;
+      width:100%;height:100%;max-width:95vw;max-height:95vh;animation:zoom .25s;
     }
-    
     .modal-content img{
-      max-width:100%;
-      max-height:100%;
-      width:auto;
-      height:auto;
-      object-fit:contain;
-      border-radius:8px;
-      box-shadow:0 4px 20px rgba(0,0,0,.5);
+      max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;
+      border-radius:8px;box-shadow:0 4px 20px rgba(0,0,0,.5);
     }
-    
-    @keyframes zoom{
-      from{transform:scale(.9);opacity:.2}
-      to{transform:scale(1);opacity:1}
-    }
-    
+    @keyframes zoom{from{transform:scale(.9);opacity:.2}to{transform:scale(1);opacity:1}}
     .close{
-      position:absolute;
-      top:15px;
-      right:35px;
-      color:#f1f1f1;
-      font-size:40px;
-      font-weight:bold;
-      cursor:pointer;
-      z-index:2001;
-      background:rgba(0,0,0,.5);
-      border-radius:50%;
-      width:60px;
-      height:60px;
-      display:flex;
-      align-items:center;
+      position:absolute;top:15px;right:35px;color:#f1f1f1;font-size:40px;
+      font-weight:bold;cursor:pointer;z-index:2001;background:rgba(0,0,0,.5);
+      border-radius:50%;width:60px;height:60px;display:flex;align-items:center;
       justify-content:center;
     }
-    
-    .close:hover{
-      color:#bbb;
-      background:rgba(0,0,0,.7);
-    }
+    .close:hover{color:#bbb;background:rgba(0,0,0,.7)}
 
-    /* Mobile */
+    /* Mobile Styles */
     @media (max-width:768px){
-      .nav-menu{gap:1rem}
-      .dropdown-content{min-width:160px}
+      .hamburger{display:flex}
+      .nav-menu{
+        position:fixed;left:-100%;top:70px;flex-direction:column;background-color:#fff;
+        width:100%;text-align:center;transition:0.3s;
+        box-shadow:0 10px 27px rgba(0,0,0,.05);padding:2rem 0;gap:0;
+      }
+      .nav-menu.active{left:0}
+      .nav-menu li{margin:1rem 0;width:100%}
+      .dropdown-content{position:static;box-shadow:none;margin-top:0.5rem;min-width:100%}
+      .dropdown.active .dropdown-content{display:block}
+      
+      .hero{height:80vh}
       .hero h1{font-size:2rem}
       .hero p{font-size:1rem}
       .about-content{grid-template-columns:1fr;text-align:center}
-      .profile-placeholder{width:200px;height:200px}
       .photo-grid{grid-template-columns:1fr}
-      .hero{height:80vh}
       .section{padding:2rem 0}
-      
-      /* Mobile modal adjustments */
       .modal{padding:10px}
-      .close{
-        top:10px;
-        right:15px;
-        font-size:30px;
-        width:50px;
-        height:50px;
-      }
+      .close{top:10px;right:15px;font-size:30px;width:50px;height:50px}
     }
-    @media (max-width:480px){.nav-container{flex-direction:column;gap:1rem}.nav-menu{gap:1.5rem}}
+    
+    @media (max-width:480px){
+      .nav-container{padding:0 1rem}
+    }
   </style>
 </head>
 <body>
-<a href="#main" class="sr-only">Skip to content</a>
+  <a href="#main" class="sr-only">Skip to content</a>
+
   <!-- Header -->
   <header class="header">
     <div class="nav-container">
       <div class="logo">Andy's Photos</div>
+      
+      <!-- Hamburger Menu Button -->
+      <div class="hamburger" onclick="toggleMobileMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      
       <nav>
-        <ul class="nav-menu">
+        <ul class="nav-menu" id="navMenu">
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About Me</a></li>
           <li class="dropdown">
-  <button class="dropdown-toggle" aria-expanded="false" aria-controls="galleryDropdown">Gallery</button>
-  <div class="dropdown-content" id="galleryDropdown">
-    <a href="#sports">Sports</a>
-    <a href="#band">Band / Color Guard</a>
-    <a href="#nature">Nature / Outdoors</a>
-    <a href="#people">People / Moments</a>
-  </div>
-</li>
+            <button class="dropdown-toggle" aria-expanded="false" aria-controls="galleryDropdown">Gallery</button>
+            <div class="dropdown-content" id="galleryDropdown">
+              <a href="#sports">Sports</a>
+              <a href="#band">Band / Color Guard</a>
+              <a href="#nature">Nature / Outdoors</a>
+              <a href="#people">People / Moments</a>
+            </div>
+          </li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -233,434 +195,219 @@
   </header>
 
   <!-- Hero Section -->
-<main id="main">
-<section id="home" class="hero">
-  <div class="hero-content">
-    <h1>Hi, I'm Andy Pazos</h1>
-    <p>I'm a high school senior who loves taking photos. Started with blurry sports shots, but now I actually know what I'm doing. I capture whatever catches my eye and tells a good story.</p>
- 
-  </div>
-</section>
-
- <!-- About Section -->
-<section id="about" class="section about">
-  <div class="container">
-    <h2>About Me</h2>
-    <div class="about-content">
-      <div class="about-image">
-        <img class="thumb" src="Images/People_Moments/about_me.jpeg"
-             style="width:250px;height:250px;object-fit:cover;border-radius:10px" loading="lazy" decoding="async">
+  <main id="main">
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <h1>Hi, I'm Andy Pazos</h1>
+        <p>I'm a high school senior who loves taking photos. Started with blurry sports shots, but now I actually know what I'm doing. I capture whatever catches my eye and tells a good story.</p>
       </div>
-      <div class="about-text">
-        <p>I started out taking photos at my friends' sports games, and it quickly became something I enjoy. I like capturing moments, whether it's sports, nature, or everyday life, and finding new ways to see things through my camera.</p>
- 
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+      <div class="container">
+        <h2>About Me</h2>
+        <div class="about-content">
+          <div class="about-image">
+            <img class="thumb" src="Images/People_Moments/about_me.jpeg"
+                 style="width:250px;height:250px;object-fit:cover;border-radius:10px" 
+                 alt="Andy Pazos with camera" loading="lazy" decoding="async">
+          </div>
+          <div class="about-text">
+            <p>I started out taking photos at my friends' sports games, and it quickly became something I enjoy. I like capturing moments, whether it's sports, nature, or everyday life, and finding new ways to see things through my camera.</p>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-  <!-- Gallery -->
-  <section id="gallery" class="section">
-    <div class="container">
-      <h2>Gallery</h2>
+    <!-- Gallery -->
+    <section id="gallery" class="section">
+      <div class="container">
+        <h2>Gallery</h2>
 
-   <!-- Sports -->
-<div id="sports" class="gallery-category">
-  <h3>Sports</h3>
-  <div class="photo-grid">
+        <!-- Sports -->
+        <div id="sports" class="gallery-category">
+          <h3>Sports</h3>
+          <div class="photo-grid">
+            <div class="photo-item" onclick="openModal('Images/Football/Football3.jpeg', 'Football player celebrating')">
+              <img class="thumb" src="Images/Football/Football3.jpeg" alt="Football player celebrating" loading="lazy">
+            </div>
+            <div class="photo-item" onclick="openModal('Images/Football/football2.JPG', 'Football action shot')">
+              <img class="thumb" src="Images/Football/football2.JPG" alt="Football action shot" loading="lazy">
+            </div>
+            <div class="photo-item" onclick="openModal('Images/Football/Football7.jpeg', 'Football game moment')">
+              <img class="thumb" src="Images/Football/Football7.jpeg" alt="Football game moment" loading="lazy">
+            </div>
+            <div class="photo-item" onclick="openModal('Images/Football/Football4.jpeg', 'Football team huddle')">
+              <img class="thumb" src="Images/Football/Football4.jpeg" alt="Football team huddle" loading="lazy">
+            </div>
+            <div class="photo-item" onclick="openModal('Images/Track/Track2.jpeg', 'Track runner crossing finish line')">
+              <img class="thumb" src="Images/Track/Track2.jpeg" alt="Track runner crossing finish line" loading="lazy">
+            </div>
+            <div class="photo-item" onclick="openModal('Images/Track/Track3.jpeg', 'Track hurdles race')">
+              <img class="thumb" src="Images/Track/Track3.jpeg" alt="Track hurdles race" loading="lazy">
+            </div>
+            <div class="photo-item" onclick="openModal('Images/Track/Track4.jpeg', 'Track relay handoff')">
+              <img class="thumb" src="Images/Track/Track4.jpeg" alt="Track relay handoff" loading="lazy">
+            </div>
+            <div class="photo-item" onclick="openModal('Images/Track/Track1.jpeg', 'Track medal ceremony')">
+              <img class="thumb" src="Images/Track/Track1.jpeg" alt="Track medal ceremony" loading="lazy">
+            </div>
+            <div class="photo-item" onclick="openModal('Images/Lacrosse/Lacrosse1.png', 'Lacrosse player with ball')">
+              <img class="thumb" src="Images/Lacrosse/Lacrosse1.png" alt="Lacrosse player with ball" loading="lazy">
+            </div>
+            <div class="photo-item" onclick="openModal('Images/Lacrosse/Lacrosse2.png', 'Lacrosse goal attempt')">
+              <img class="thumb" src="Images/Lacrosse/Lacrosse2.png" alt="Lacrosse goal attempt" loading="lazy">
+            </div>
+            <div class="photo-item" onclick="openModal('Images/Lacrosse/Lacrosse4.png', 'Lacrosse face-off')">
+              <img class="thumb" src="Images/Lacrosse/Lacrosse4.png" alt="Lacrosse face-off" loading="lazy">
+            </div>
+            <div class="photo-item" onclick="openModal('Images/Lacrosse/Lacrosse5.png', 'Lacrosse sprint')">
+              <img class="thumb" src="Images/Lacrosse/Lacrosse5.png" alt="Lacrosse sprint" loading="lazy">
+            </div>
+          </div>
+        </div>
 
-    <!-- Football -->
-    <div class="photo-item" onclick="openModal('Images/Football/Football3.jpeg')">
-      <img class="thumb" 
-           src="Images/Football/Football3.jpeg" 
-           loading="lazy">
-    </div>
-    
-    <div class="photo-item" onclick="openModal('Images/Football/football2.JPG')">
-      <img class="thumb" 
-           src="Images/Football/football2.JPG" 
-           loading="lazy">
-    </div>
+        <!-- Band / Color Guard -->
+        <div id="band" class="gallery-category">
+          <h3>Band / Color Guard</h3>
+          <div class="photo-grid">
+            <div class="photo-item" onclick="openModal('Images/Band/Band1.jpeg', 'Band percussion section')">
+              <img class="thumb" src="Images/Band/Band1.jpeg" alt="Band percussion section" loading="lazy">
+            </div>
+            <div class="photo-item" onclick="openModal('Images/Band/Band3.jpeg', 'Band performance')">
+              <img class="thumb" src="Images/Band/Band3.jpeg" alt="Band performance" loading="lazy">
+            </div>
+            <div class="photo-item" onclick="openModal('Images/Band/Band2.jpeg', 'Timpani player')">
+              <img class="thumb" src="Images/Band/Band2.jpeg" alt="Timpani player" loading="lazy">
+            </div>
+            <div class="photo-item" onclick="openModal('Images/Band/Band4.jpeg', 'Band ensemble')">
+              <img class="thumb" src="Images/Band/Band4.jpeg" alt="Band ensemble" loading="lazy">
+            </div>
+            <div class="photo-item" onclick="openModal('Images/ColorGuard/ColorGuard1.jpeg', 'Color guard rifle work')">
+              <img class="thumb" src="Images/ColorGuard/ColorGuard1.jpeg" alt="Color guard rifle work" loading="lazy">
+            </div>
+            <div class="photo-item" onclick="openModal('Images/ColorGuard/ColorGuard10.jpeg', 'Color guard flag toss')">
+              <img class="thumb" src="Images/ColorGuard/ColorGuard10.jpeg" alt="Color guard flag toss" loading="lazy">
+            </div>
+            <div class="photo-item" onclick="openModal('Images/ColorGuard/ColorGuard7.jpeg', 'Color guard choreography')">
+              <img class="thumb" src="Images/ColorGuard/ColorGuard7.jpeg" alt="Color guard choreography" loading="lazy">
+            </div>
+            <div class="photo-item" onclick="openModal('Images/ColorGuard/ColorGuard9.jpeg', 'Color guard performance')">
+              <img class="thumb" src="Images/ColorGuard/ColorGuard9.jpeg" alt="Color guard performance" loading="lazy">
+            </div>
+            <div class="photo-item" onclick="openModal('Images/ColorGuard/ColorGuard5.jpeg', 'Color guard sabre work')">
+              <img class="thumb" src="Images/ColorGuard/ColorGuard5.jpeg" alt="Color guard sabre work" loading="lazy">
+            </div>
+            <div class="photo-item" onclick="openModal('Images/ColorGuard/ColorGuard4.jpeg', 'Color guard synchronized move')">
+              <img class="thumb" src="Images/ColorGuard/ColorGuard4.jpeg" alt="Color guard synchronized move" loading="lazy">
+            </div>
+            <div class="photo-item" onclick="openModal('Images/ColorGuard/ColorGuard8.jpeg', 'Color guard flag routine')">
+              <img class="thumb" src="Images/ColorGuard/ColorGuard8.jpeg" alt="Color guard flag routine" loading="lazy">
+            </div>
+            <div class="photo-item" onclick="openModal('Images/ColorGuard/ColorGuard6.jpeg', 'Color guard floor work')">
+              <img class="thumb" src="Images/ColorGuard/ColorGuard6.jpeg" alt="Color guard floor work" loading="lazy">
+            </div>
+          </div>
+        </div>
 
-    <div class="photo-item" onclick="openModal('Images/Football/Football7.jpeg')">
-      <img class="thumb" 
-           src="Images/Football/Football7.jpeg" 
-           
-           loading="lazy">
-    </div>
+        <!-- Nature/Outdoors -->
+        <div id="nature" class="gallery-category">
+          <h3>Nature/Outdoors</h3>
+          <div class="photo-grid">
+            <div class="photo-item" onclick="openModal('Images/Nature/Nature17.jpeg', 'Beach sunset silhouette')">
+              <img class="thumb" src="Images/Nature/Nature17.jpeg" alt="Beach sunset silhouette" loading="lazy">
+            </div>
+            <div class="photo-item" onclick="openModal('Images/Nature/Nature15.jpg', 'Purple sky sunset')">
+              <img class="thumb" src="Images/Nature/Nature15.jpg" alt="Purple sky sunset" loading="lazy">
+            </div>
+            <div class="photo-item" onclick="openModal('Images/Nature/Nature1.jpeg', 'Palm tree pool reflection')">
+              <img class="thumb" src="Images/Nature/Nature1.jpeg" alt="Palm tree pool reflection" loading="lazy">
+            </div>
+            <div class="photo-item" onclick="openModal('Images/Nature/Nature2.png', 'Bird in flight')">
+              <img class="thumb" src="Images/Nature/Nature2.png" alt="Bird in flight" loading="lazy">
+            </div>
+            <div class="photo-item" onclick="openModal('Images/Nature/Nature18.jpeg', 'Moon through palm trees')">
+              <img class="thumb" src="Images/Nature/Nature18.jpeg" alt="Moon through palm trees" loading="lazy">
+            </div>
+            <div class="photo-item" onclick="openModal('Images/Nature/Nature3.png', 'Deer close-up')">
+              <img class="thumb" src="Images/Nature/Nature3.png" alt="Deer close-up" loading="lazy">
+            </div>
+            <div class="photo-item" onclick="openModal('Images/Nature/Nature8.jpeg', 'Giraffe portrait')">
+              <img class="thumb" src="Images/Nature/Nature8.jpeg" alt="Giraffe portrait" loading="lazy">
+            </div>
+            <div class="photo-item" onclick="openModal('Images/Nature/Nature9.jpeg', 'Dramatic clouds')">
+              <img class="thumb" src="Images/Nature/Nature9.jpeg" alt="Dramatic clouds" loading="lazy">
+            </div>
+            <div class="photo-item" onclick="openModal('Images/Nature/Nature12.jpeg', 'Wildlife scene')">
+              <img class="thumb" src="Images/Nature/Nature12.jpeg" alt="Wildlife scene" loading="lazy">
+            </div>
+            <div class="photo-item" onclick="openModal('Images/Nature/Nature19.png', 'Nature landscape')">
+              <img class="thumb" src="Images/Nature/Nature19.png" alt="Nature landscape" loading="lazy">
+            </div>
+            <div class="photo-item" onclick="openModal('Images/Nature/Nature5.png', 'Outdoor scene')">
+              <img class="thumb" src="Images/Nature/Nature5.png" alt="Outdoor scene" loading="lazy">
+            </div>
+            <div class="photo-item" onclick="openModal('Images/Nature/Narture6.jpeg', 'Nature photography')">
+              <img class="thumb" src="Images/Nature/Narture6.jpeg" alt="Nature photography" loading="lazy">
+            </div>
+          </div>
+        </div>
 
-    <div class="photo-item" onclick="openModal('Images/Football/Football4.jpeg')">
-      <img class="thumb" 
-           src="Images/Football/Football4.jpeg" 
-           
-           loading="lazy">
-    </div>
-
-    <!-- Track & Field -->
-    <div class="photo-item" onclick="openModal('Images/Track/Track2.jpeg')">
-      <img class="thumb" 
-           src="Images/Track/Track2.jpeg" 
-           
-           loading="lazy">
-    </div>
-    
-    <div class="photo-item" onclick="openModal('Images/Track/Track3.jpeg')">
-      <img class="thumb" 
-           src="Images/Track/Track3.jpeg" 
-          
-           loading="lazy">
-    </div>
-
-    <div class="photo-item" onclick="openModal('Images/Track/Track4.jpeg')">
-      <img class="thumb" 
-           src="Images/Track/Track4.jpeg" 
-           
-           loading="lazy">
-    </div>
-    
-    <div class="photo-item" onclick="openModal('Images/Track/Track1.jpeg')">
-      <img class="thumb" 
-           src="Images/Track/Track1.jpeg" 
-           
-           loading="lazy">
-    </div>
-
-    <!-- Lacrosse -->
-    <div class="photo-item" onclick="openModal('Images/Lacrosse/Lacrosse1.png')">
-      <img class="thumb" 
-           src="Images/Lacrosse/Lacrosse1.png" 
-           
-           loading="lazy">
-    </div>
-
-    <div class="photo-item" onclick="openModal('Images/Lacrosse/Lacrosse2.png')">
-      <img class="thumb" 
-           src="Images/Lacrosse/Lacrosse2.png" 
-          
-           loading="lazy">
-    </div>
-
-    <div class="photo-item" onclick="openModal('Images/Lacrosse/Lacrosse4.png')">
-      <img class="thumb" 
-           src="Images/Lacrosse/Lacrosse4.png" 
-           
-           loading="lazy">
-    </div>
-
-    <div class="photo-item" onclick="openModal('Images/Lacrosse/Lacrosse5.png')">
-      <img class="thumb" 
-           src="Images/Lacrosse/Lacrosse5.png" 
-           
-           loading="lazy">
-    </div>
-
-  </div>
-</div>
-
-      <!-- Band / Color Guard -->
-<div id="band" class="gallery-category">
-  <h3>Band / Color Guard</h3>
-  <div class="photo-grid">
-
-    <!-- Row 1 -->
-    <div class="photo-item" onclick="openModal('Images/Band/Band1.jpeg')">
-      <img class="thumb" 
-           src="Images/Band/Band1.jpeg" 
-          
-           loading="lazy">
-    </div>
-    
-    <div class="photo-item" onclick="openModal('Images/Band/Band3.jpeg')">
-      <img class="thumb" 
-           src="Images/Band/Band3.jpeg" 
-           
-           loading="lazy">
-    </div>
-
-    <div class="photo-item" onclick="openModal('Images/Band/Band2.jpeg')">
-      <img class="thumb" 
-           src="Images/Band/Band2.jpeg" 
-           
-           loading="lazy">
-    </div>
-    
-    <div class="photo-item" onclick="openModal('Images/Band/Band4.jpeg')">
-      <img class="thumb" 
-           src="Images/Band/Band4.jpeg" 
-           
-           loading="lazy">
-    </div>
-
-    <!-- Row 2 -->
-    <div class="photo-item" onclick="openModal('Images/ColorGuard/ColorGuard1.jpeg')">
-      <img class="thumb" 
-           src="Images/ColorGuard/ColorGuard1.jpeg" 
-          
-           loading="lazy">
-    </div>
-    
-    <div class="photo-item" onclick="openModal('Images/ColorGuard/ColorGuard10.jpeg')">
-      <img class="thumb" 
-           src="Images/ColorGuard/ColorGuard10.jpeg" 
-           
-           loading="lazy">
-    </div>
-
-    <div class="photo-item" onclick="openModal('Images/ColorGuard/ColorGuard7.jpeg')">
-      <img class="thumb" 
-           src="Images/ColorGuard/ColorGuard7.jpeg" 
-           
-           loading="lazy">
-    </div>
-
-    <div class="photo-item" onclick="openModal('Images/ColorGuard/ColorGuard9.jpeg')">
-      <img class="thumb" 
-           src="Images/ColorGuard/ColorGuard9.jpeg" 
-           
-           loading="lazy">
-    </div>
-
-    <!-- Row 3 -->
-    <div class="photo-item" onclick="openModal('Images/ColorGuard/ColorGuard5.jpeg')">
-      <img class="thumb" 
-           src="Images/ColorGuard/ColorGuard5.jpeg" 
-          
-           loading="lazy">
-    </div>
-
-    <div class="photo-item" onclick="openModal('Images/ColorGuard/ColorGuard4.jpeg')">
-      <img class="thumb" 
-           src="Images/ColorGuard/ColorGuard4.jpeg" 
-           
-           loading="lazy">
-    </div>
-
-    <div class="photo-item" onclick="openModal('Images/ColorGuard/ColorGuard8.jpeg')">
-      <img class="thumb" 
-           src="Images/ColorGuard/ColorGuard8.jpeg" 
-           
-           loading="lazy">
-    </div>
-
-    <div class="photo-item" onclick="openModal('Images/ColorGuard/ColorGuard6.jpeg')">
-      <img class="thumb" 
-           src="Images/ColorGuard/ColorGuard6.jpeg" 
-           
-           loading="lazy">
-    </div>
-
-  </div>
-</div>
-
-
-
-     <!-- Nature/Outdoors -->
-<div id="nature" class="gallery-category">
-  <h3>Nature/Outdoors</h3>
-  <div class="photo-grid">
-
- <div class="photo-item" onclick="openModal('Images/Nature/Nature17.jpeg')">
-      <img class="thumb" 
-           src="Images/Nature/Nature17.jpeg" 
-           
-           loading="lazy">
-    </div>
-    
-    <div class="photo-item" onclick="openModal('Images/Nature/Nature15.jpg')">
-      <img class="thumb" 
-           src="Images/Nature/Nature15.jpg" 
-           
-           loading="lazy">
-    </div>
-
-
-    <div class="photo-item" onclick="openModal('Images/Nature/Nature1.jpeg')">
-      <img class="thumb" 
-           src="Images/Nature/Nature1.jpeg" 
-           
-           loading="lazy">
-    </div>
-
-    <div class="photo-item" onclick="openModal('Images/Nature/Nature2.png')">
-      <img class="thumb" 
-           src="Images/Nature/Nature2.png" 
-           
-           loading="lazy">
-    </div>
-
-    <div class="photo-item" onclick="openModal('Images/Nature/Nature18.jpeg')">
-      <img class="thumb" 
-           src="Images/Nature/Nature18.jpeg" 
-           
-           loading="lazy">
-    </div>
-
-    <div class="photo-item" onclick="openModal('Images/Nature/Nature3.png')">
-      <img class="thumb" 
-           src="Images/Nature/Nature3.png" 
-           
-           loading="lazy">
-    </div>
-
-    <div class="photo-item" onclick="openModal('Images/Nature/Nature8.jpeg')">
-      <img class="thumb" 
-           src="Images/Nature/Nature8.jpeg" 
-           
-           loading="lazy">
-    </div>
-
-    <div class="photo-item" onclick="openModal('Images/Nature/Nature9.jpeg')">
-      <img class="thumb" 
-           src="Images/Nature/Nature9.jpeg" 
-           
-           loading="lazy">
-    </div>
-
-    <div class="photo-item" onclick="openModal('Images/Nature/Nature12.jpeg')">
-      <img class="thumb" 
-           src="Images/Nature/Nature12.jpeg" 
-           
-           loading="lazy">
-    </div>
-
-    <div class="photo-item" onclick="openModal('Images/Nature/Nature19.png')">
-      <img class="thumb" 
-           src="Images/Nature/Nature19.png" 
-           
-           loading="lazy">
-    </div>
-
-    <div class="photo-item" onclick="openModal('Images/Nature/Nature5.png')">
-      <img class="thumb" 
-           src="Images/Nature/Nature5.png" 
-           
-           loading="lazy">
-    </div>
-
-    <div class="photo-item" onclick="openModal('Images/Nature/Narture6.jpeg')">
-      <img class="thumb" 
-           src="Images/Nature/Narture6.jpeg" 
-           
-           loading="lazy">
-    </div>
-
-  </div>
-</div>
-
-
-     <!-- People/Moments -->
-<div id="people" class="gallery-category">
-  <h3>People/Moments</h3>
-  <div class="photo-grid">
-
-    <!-- Row 1 -->
-    <div class="photo-item" onclick="openModal('Images/People_Moments/Group1.png')">
-      <img class="thumb" 
-           src="Images/People_Moments/Group1.png" 
-           
-           loading="lazy">
-    </div>
-
-    <div class="photo-item" onclick="openModal('Images/People_Moments/Person2.png')">
-      <img class="thumb" 
-           src="Images/People_Moments/Person2.png" 
-           
-           loading="lazy">
-    </div>
-
-    <div class="photo-item" onclick="openModal('Images/People_Moments/Person3.png')">
-      <img class="thumb" 
-           src="Images/People_Moments/Person3.png" 
-          
-           loading="lazy">
-    </div>
-    
-    
-    <div class="photo-item" onclick="openModal('Images/People_Moments/Julie1.jpeg')">
-      <img class="thumb" 
-           src="Images/People_Moments/Julie1.jpeg" 
-           
-           loading="lazy">
-    </div>
-
-    <div class="photo-item" onclick="openModal('Images/People_Moments/Person1.jpeg')">
-      <img class="thumb" 
-           src="Images/People_Moments/Person1.jpeg" 
-           
-           loading="lazy">
-    </div>
-
-    
-
-    <!-- Row 2 -->
-    <div class="photo-item" onclick="openModal('Images/People_Moments/Family3.png')">
-      <img class="thumb" 
-           src="Images/People_Moments/Family3.png" 
-           
-           loading="lazy">
-    </div>
-    
-    <div class="photo-item" onclick="openModal('Images/People_Moments/Skateboard1.jpeg')">
-      <img class="thumb" 
-           src="Images/People_Moments/Skateboard1.jpeg" 
-           
-           loading="lazy">
-    </div>
-
-    <div class="photo-item" onclick="openModal('Images/People_Moments/Skateboard4.jpeg')">
-      <img class="thumb" 
-           src="Images/People_Moments/Skateboard4.jpeg" 
-          
-           loading="lazy">
-    </div>
-
-    <div class="photo-item" onclick="openModal('Images/People_Moments/Person6.png')">
-      <img class="thumb" 
-           src="Images/People_Moments/Person6.png" 
-           
-           loading="lazy">
-    </div>
-
-    <!-- Row 3 -->
-      <div class="photo-item" onclick="openModal('Images/People_Moments/Person7.png')">
-      <img class="thumb" 
-           src="Images/People_Moments/Person7.png" 
-          
-           loading="lazy">
-    </div>
-
-    
-    <div class="photo-item" onclick="openModal('Images/People_Moments/Julie2.jpeg')">
-      <img class="thumb" 
-           src="Images/People_Moments/Julie2.jpeg" 
-          
-           loading="lazy">
-    </div>
-
-    
-
-    <div class="photo-item" onclick="openModal('Images/People_Moments/Couple2.jpeg')">
-      <img class="thumb" 
-           src="Images/People_Moments/Couple2.jpeg" 
-           
-           loading="lazy">
-    </div>
-
-  </div>
-</div>
+        <!-- People/Moments -->
+        <div id="people" class="gallery-category">
+          <h3>People/Moments</h3>
+          <div class="photo-grid">
+            <div class="photo-item" onclick="openModal('Images/People_Moments/Group1.png', 'Friends group photo')">
+              <img class="thumb" src="Images/People_Moments/Group1.png" alt="Friends group photo" loading="lazy">
+            </div>
+            <div class="photo-item" onclick="openModal('Images/People_Moments/Person2.png', 'Dance team celebration')">
+              <img class="thumb" src="Images/People_Moments/Person2.png" alt="Dance team celebration" loading="lazy">
+            </div>
+            <div class="photo-item" onclick="openModal('Images/People_Moments/Person3.png', 'Confident portrait')">
+              <img class="thumb" src="Images/People_Moments/Person3.png" alt="Confident portrait" loading="lazy">
+            </div>
+            <div class="photo-item" onclick="openModal('Images/People_Moments/Julie1.jpeg', 'Beach relaxation')">
+              <img class="thumb" src="Images/People_Moments/Julie1.jpeg" alt="Beach relaxation" loading="lazy">
+            </div>
+            <div class="photo-item" onclick="openModal('Images/People_Moments/Person1.jpeg', 'Synchronized dance routine')">
+              <img class="thumb" src="Images/People_Moments/Person1.jpeg" alt="Synchronized dance routine" loading="lazy">
+            </div>
+            <div class="photo-item" onclick="openModal('Images/People_Moments/Family3.png', 'Sunset couple')">
+              <img class="thumb" src="Images/People_Moments/Family3.png" alt="Sunset couple" loading="lazy">
+            </div>
+            <div class="photo-item" onclick="openModal('Images/People_Moments/Skateboard1.jpeg', 'Skateboarder at skate park')">
+              <img class="thumb" src="Images/People_Moments/Skateboard1.jpeg" alt="Skateboarder at skate park" loading="lazy">
+            </div>
+            <div class="photo-item" onclick="openModal('Images/People_Moments/Skateboard4.jpeg', 'Skateboard bowl carving')">
+              <img class="thumb" src="Images/People_Moments/Skateboard4.jpeg" alt="Skateboard bowl carving" loading="lazy">
+            </div>
+            <div class="photo-item" onclick="openModal('Images/People_Moments/Person6.png', 'Skateboard trick sequence')">
+              <img class="thumb" src="Images/People_Moments/Person6.png" alt="Skateboard trick sequence" loading="lazy">
+            </div>
+            <div class="photo-item" onclick="openModal('Images/People_Moments/Person7.png', 'Pet portrait Yorkshire Terrier')">
+              <img class="thumb" src="Images/People_Moments/Person7.png" alt="Pet portrait Yorkshire Terrier" loading="lazy">
+            </div>
+            <div class="photo-item" onclick="openModal('Images/People_Moments/Julie2.jpeg', 'Candid moment')">
+              <img class="thumb" src="Images/People_Moments/Julie2.jpeg" alt="Candid moment" loading="lazy">
+            </div>
+            <div class="photo-item" onclick="openModal('Images/People_Moments/Couple2.jpeg', 'Couple portrait')">
+              <img class="thumb" src="Images/People_Moments/Couple2.jpeg" alt="Couple portrait" loading="lazy">
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
 
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="section contact">
-    <div class="container">
-      <h2>Contact</h2>
-      <p>Thanks for visiting my site. You can reach me at</p>
-      <div class="contact-email">andy.pazos@icloud.com</div>
-    </div>
-  </section>
+    <!-- Contact -->
+    <section id="contact" class="section contact">
+      <div class="container">
+        <h2>Contact</h2>
+        <p>Thanks for visiting my site. You can reach me at</p>
+        <div class="contact-email">andy.pazos@icloud.com</div>
+      </div>
+    </section>
+  </main>
 
   <!-- Footer -->
   <footer class="footer">
@@ -669,130 +416,125 @@
     </div>
   </footer>
 
-  <!-- FIXED MODAL -->
+  <!-- Modal -->
   <div id="photoModal" class="modal" role="dialog" aria-modal="true" aria-label="Full-size photo">
     <span class="close" onclick="closeModal()" aria-label="Close">&times;</span>
     <div class="modal-content" id="modalImage"></div>
   </div>
 
   <script>
-    // Dropdown functionality
-    function toggleDropdown(event) {
-      event.preventDefault();
-      const dropdown = event.target.closest('.dropdown');
-      dropdown.classList.toggle('active');
-    }
-
-    // Close dropdown when clicking outside
-    document.addEventListener('click', function(event) {
-      if (!event.target.closest('.dropdown')) {
-        document.querySelectorAll('.dropdown').forEach(dropdown => {
-          dropdown.classList.remove('active');
-        });
-      }
-    });
-
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click',e=>{
-        // Don't prevent default for dropdown toggle
-        if (!a.onclick) {
-          e.preventDefault();
-          const target=document.querySelector(a.getAttribute('href'));
-          const headerHeight=document.querySelector('.header').offsetHeight;
-          window.scrollTo({top:target.offsetTop-headerHeight,behavior:'smooth'});
+    // Smooth scroll for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        if (this.getAttribute('href') && this.getAttribute('href').length > 1) {
+          const targetId = this.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
           
-          // Close dropdown after clicking gallery section links
-          document.querySelectorAll('.dropdown').forEach(dropdown => {
-            dropdown.classList.remove('active');
-          });
+          if (targetElement) {
+            e.preventDefault();
+            const headerHeight = document.querySelector('.header').offsetHeight;
+            const targetPosition = targetElement.offsetTop - headerHeight;
+            
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+            
+            closeMobileMenu();
+            document.querySelectorAll('.dropdown').forEach(dropdown => {
+              dropdown.classList.remove('active');
+            });
+          }
         }
       });
     });
 
-    // FIXED MODAL JAVASCRIPT
-    function openModal(src, altText=''){
+    // Dropdown toggle functionality
+    document.querySelector('.dropdown-toggle')?.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      const dropdown = this.closest('.dropdown');
+      const isOpen = dropdown.classList.toggle('active');
+      this.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.dropdown')) {
+        document.querySelectorAll('.dropdown').forEach(dropdown => {
+          dropdown.classList.remove('active');
+          const toggle = dropdown.querySelector('.dropdown-toggle');
+          if (toggle) toggle.setAttribute('aria-expanded', 'false');
+        });
+      }
+    });
+
+    // Escape key handling
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.dropdown').forEach(dropdown => {
+          dropdown.classList.remove('active');
+          const toggle = dropdown.querySelector('.dropdown-toggle');
+          if (toggle) toggle.setAttribute('aria-expanded', 'false');
+        });
+        try { closeModal(); } catch(err) {}
+      }
+    });
+
+    // Mobile menu functions
+    function toggleMobileMenu() {
+      const navMenu = document.getElementById('navMenu');
+      const hamburger = document.querySelector('.hamburger');
+      if (navMenu && hamburger) {
+        navMenu.classList.toggle('active');
+        hamburger.classList.toggle('active');
+      }
+    }
+
+    function closeMobileMenu() {
+      const navMenu = document.getElementById('navMenu');
+      const hamburger = document.querySelector('.hamburger');
+      if (navMenu && hamburger) {
+        navMenu.classList.remove('active');
+        hamburger.classList.remove('active');
+      }
+    }
+
+    // Modal functions
+    let __lastFocused = null;
+
+    function openModal(src, altText = '') {
+      __lastFocused = document.activeElement;
       const modal = document.getElementById('photoModal');
       const content = document.getElementById('modalImage');
       
-      // Create image element with proper styling
       content.innerHTML = `<img src="${src}" alt="${altText}" />`;
       modal.style.display = 'block';
-      
-      // Prevent body scrolling when modal is open
       document.body.style.overflow = 'hidden';
-    }
-    
-    function closeModal() { 
-      const modal = document.getElementById('photoModal');
-      modal.style.display = 'none';
       
-      // Restore body scrolling
-      document.body.style.overflow = 'auto';
-    }
-    
-    // Close modal when clicking outside the image
-    window.onclick = function(e) { 
-      if (e.target.id === 'photoModal') {
-        closeModal(); 
-      }
-    };
-    
-    // Close modal with Escape key
-    document.addEventListener('keydown', function(e) { 
-      if (e.key === 'Escape') {
-        closeModal(); 
-      }
-    });
-  </script>
-
-  <script>
-    // --- Dropdown behavior (added) ---
-    document.querySelector('.dropdown-toggle')?.addEventListener('click', (e) => {
-      const dd = e.currentTarget.closest('.dropdown');
-      const open = dd.classList.toggle('active');
-      e.currentTarget.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-    
-    document.addEventListener('click', (e) => {
-      const dd = document.querySelector('.dropdown');
-      if(dd && !e.target.closest('.dropdown')){
-        dd.classList.remove('active');
-        document.querySelector('.dropdown-toggle')?.setAttribute('aria-expanded','false');
-      }
-    });
-    
-    document.addEventListener('keydown', (e) => {
-      if(e.key === 'Escape'){
-        const dd = document.querySelector('.dropdown');
-        dd?.classList.remove('active');
-        document.querySelector('.dropdown-toggle')?.setAttribute('aria-expanded','false');
-        try{ closeModal(); }catch(err){}
-      }
-    });
-
-    // --- Modal focus return (added) ---
-    let __lastFocused = null;
-    
-    // Override the openModal function to handle focus properly
-    const originalOpenModal = openModal;
-    openModal = function(src, altText='') {
-      __lastFocused = document.activeElement;
-      originalOpenModal(src, altText);
-      // Focus the close button for accessibility
       setTimeout(() => {
         document.querySelector('.close')?.focus();
       }, 100);
-    };
-    
-    // Override closeModal to restore focus
-    const originalCloseModal = closeModal;
-    closeModal = function() {
-      originalCloseModal();
-      if(__lastFocused) {
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('photoModal');
+      modal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+      
+      if (__lastFocused) {
         __lastFocused.focus();
+      }
+    }
+
+    // Close modal when clicking outside the image
+    window.onclick = function(e) {
+      if (e.target.id === 'photoModal') {
+        closeModal();
       }
     };
   </script>
+</body>
+</html>
 </body>
 </html>
