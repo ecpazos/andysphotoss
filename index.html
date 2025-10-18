@@ -142,8 +142,8 @@
       }
       .nav-menu.active{left:0}
       .nav-menu li{margin:1rem 0;width:100%}
-      .dropdown-content{position:static;box-shadow:none;margin-top:0.5rem;min-width:100%}
-      .dropdown.active .dropdown-content{display:block}
+      .-content{position:static;box-shadow:none;margin-top:0.5rem;min-width:100%}
+      ..active .-content{display:block}
       
       .hero{height:80vh}
       .hero h1{font-size:2rem}
@@ -186,6 +186,7 @@
               <a href="#band">Band / Color Guard</a>
               <a href="#nature">Nature / Outdoors</a>
               <a href="#people">People / Moments</a>
+              <a href="#colleges">Colleges</a>
             </div>
           </li>
           <li><a href="#contact">Contact</a></li>
@@ -396,6 +397,23 @@
             </div>
           </div>
         </div>
+         <!-- Colleges -->
+        <div id="colleges" class="gallery-category">
+          <h3>Colleges</h3>
+          <div class="photo-grid">
+            <div class="photo-item" onclick="openModal('Images/Colleges/UGA/UGA_1.png')">
+              <img class="thumb" src="Images/Colleges/UGA/UGA_1.png" loading="lazy">
+            </div>
+            <div class="photo-item" onclick="openModal('Images/Colleges/UGA/UGA_2.png')">
+              <img class="thumb" src="Images/Colleges/UGA/UGA_2.png"loading="lazy">
+            </div>
+            <div class="photo-item" onclick="openModal('Images/Colleges/UGA/UGA_3.png')">
+              <img class="thumb" src="Images/Colleges/UGA/UGA_3.png" loading="lazy">
+            </div>
+            <div class="photo-item" onclick="openModal('Images/Colleges/UGA/UGA_4.png')">
+              <img class="thumb" src="Images/Colleges/UGA/UGA_4.png" loading="lazy">
+            </div>
+          </div>
       </div>
     </section>
 
